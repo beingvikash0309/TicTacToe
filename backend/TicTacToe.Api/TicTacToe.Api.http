@@ -1,0 +1,46 @@
+@TicTacToe.Api_HostAddress = http://localhost:5108
+
+### Create a new Two Player game
+POST {{TicTacToe.Api_HostAddress}}/api/games
+Content-Type: application/json
+
+{
+  "mode": "TwoPlayer"
+}
+
+### Create a new Play Against Computer game
+POST {{TicTacToe.Api_HostAddress}}/api/games
+Content-Type: application/json
+
+{
+  "mode": "VsComputer"
+}
+
+### Get game state (replace {id} with a game id from the create response)
+GET {{TicTacToe.Api_HostAddress}}/api/games/{id}
+Accept: application/json
+
+### Submit a move
+POST {{TicTacToe.Api_HostAddress}}/api/games/{id}/moves
+Content-Type: application/json
+
+{
+  "player": "X",
+  "row": 0,
+  "col": 0
+}
+
+### Undo the last move (or move pair in Computer mode)
+POST {{TicTacToe.Api_HostAddress}}/api/games/{id}/undo
+
+### Reset the current game (scoreboard untouched)
+POST {{TicTacToe.Api_HostAddress}}/api/games/{id}/reset
+
+### Get the scoreboard
+GET {{TicTacToe.Api_HostAddress}}/api/scoreboard
+Accept: application/json
+
+### Reset the scoreboard
+POST {{TicTacToe.Api_HostAddress}}/api/scoreboard/reset
+
+###

@@ -1,0 +1,37 @@
+<main class="app-shell">
+  <h1>Tic Tac Toe</h1>
+
+  @if (errorMessage()) {
+    <p class="error-banner">{{ errorMessage() }}</p>
+  }
+
+  @if (game(); as g) {
+    <app-game-controls
+      [mode]="g.mode"
+      [canUndo]="g.canUndo"
+      (modeChange)="onModeChange($event)"
+      (undo)="onUndo()"
+      (resetGame)="onResetGame()"
+    />
+
+    <p class="status" [class.won]="g.status === 'Won'" [class.draw]="g.status === 'Draw'">
+      {{ statusMessage() }}
+    </p>
+
+    <div class="layout">
+      <app-board
+        [cells]="g.board"
+        [winningCells]="g.winningCells"
+        [disabled]="g.status !== 'InProgress' || busy()"
+        (cellClicked)="onCellClick($event)"
+      />
+
+      <aside class="side-panel">
+        <app-scoreboard [scoreboard]="g.scoreboard" (resetScoreboard)="onResetScoreboard()" />
+        <app-move-history [moves]="g.moveHistory" />
+      </aside>
+    </div>
+  } @else {
+    <p>Loading game...</p>
+  }
+</main>

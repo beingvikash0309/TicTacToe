@@ -1,0 +1,20 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+*.user
+
+# Angular / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+npm-debug.log*
+
+# Editors / OS
+.vs/
+/.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code local dev-tool config (preview launch config, not part of the app)
+.claude/

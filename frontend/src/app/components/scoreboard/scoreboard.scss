@@ -1,0 +1,46 @@
+.scoreboard {
+  h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+  }
+
+  .tallies {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .tally {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 14px;
+    min-width: 64px;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .value {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .reset-scoreboard {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1f5f9;
+    }
+  }
+}

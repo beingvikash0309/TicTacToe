@@ -1,0 +1,27 @@
+.move-history {
+  h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 4px 8px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .empty {
+    color: #64748b;
+    font-size: 0.85rem;
+  }
+
+  max-height: 220px;
+  overflow-y: auto;
+}

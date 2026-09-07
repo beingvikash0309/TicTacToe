@@ -1,0 +1,14 @@
+<section class="game-controls">
+  <label class="mode-select">
+    Game Mode
+    <select [ngModel]="mode" (ngModelChange)="onModeSelect($event)">
+      <option value="TwoPlayer">Two Player</option>
+      <option value="VsComputer">Play Against Computer</option>
+    </select>
+  </label>
+
+  <div class="actions">
+    <button type="button" (click)="undo.emit()" [disabled]="!canUndo">Undo Last Move</button>
+    <button type="button" (click)="resetGame.emit()">Reset Game</button>
+  </div>
+</section>
